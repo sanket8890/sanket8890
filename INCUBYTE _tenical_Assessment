@@ -1,0 +1,73 @@
+CREATE TABLE intermediate (Customer_Name VARCHAR(255), Customer_ID VARCHAR(18), Customer_Open_Date DATE, 
+Last_Consulted_Date DATE, Vaccination_Type CHAR(5), Doctor_Consulted CHAR(255), State CHAR(5), 
+Country CHAR(5), Post_Code INT(5), Date_of_Birth DATE, Active_Customer CHAR(1));
+
+
+INSERT INTO intermediate (Customer_Name , Customer_ID , Customer_Open_Date , 
+Last_Consulted_Date , Vaccination_Type , Doctor_Consulted, State , 
+Country, Date_of_Birth, Active_Customer) VALUES ("Alex",123457,"2010-10-12","2012-10-13","MVD","Paul","SA","USA","1987-03-06","A"),
+("John",123458,"2010-10-12","2012-10-13", "MVD", "Paul", "TN", "IND", "1987-03-06", "A"),
+("Mathew", 123459, "2010-10-12", "2012-10-13", "MVD", "Paul", "WAS", "PHIL", "1987-03-06", "A"),
+("Matt", 12345,"2010-10-12", "2012-10-13", "MVD", "Paul", "BOS", "NYC" ,"1987-03-06","A"),
+("Jacob", 1256,"2010-10-12", "2012-10-13","MVD", "Paul", "VIC","AU", "1987-03-06", "A");
+
+
+
+
+
+--All customers related to India will go to Table_India and so on
+
+CREATE TABLE Table_India AS
+Customer Customer_ID, Customer_Open_Date, Last_Consulted_Date, Vaccination_Type, Doctor_Consulted, State, Country, post_Code, Date_of_Birth, Active_Customer
+FROM Intermediate WHERE Country = "IND";
+
+SELECT * FROM Table_India;
+
+
+
+
+CREATE TABLE Table_USA AS
+Customer Customer_ID, Customer_Open_Date, Last_Consulted_Date, Vaccination_Type, Doctor_Consulted, State, Country, post_Code, Date_of_Birth, Active_Customer
+FROM Intermediate1 WHERE Country = "USA";
+
+SELECT * FROM  Table_USA;
+
+
+
+
+
+CREATE TABLE Table_PHIL AS
+Customer Customer_ID, Customer_Open_Date, Last_Consulted_Date, Vaccination_Type, Doctor_Consulted, State, Country, post_Code, Date_of_Birth, Active_Customer
+FROM Intermediate WHERE Country = "PHIL";
+
+SELECT * FROM  Table_PHIL;
+
+
+
+
+
+CREATE TABLE Table_NYC AS
+Customer Customer_ID, Customer_Open_Date, Last_Consulted_Date, Vaccination_Type, Doctor_Consulted, State, Country, post_Code, Date_of_Birth, Active_Customer
+FROM Intermediate WHERE Country = "NYC";
+
+SELECT * FROM Table_NYC;
+
+
+
+
+CREATE TABLE Table_AU AS
+Customer Customer_ID, Customer_Open_Date, Last_Consulted_Date, Vaccination_Type, Doctor_Consulted, State, Country, post_Code, Date_of_Birth, Active_Customer
+FROM Intermediate WHERE Country = "AU";
+
+SELECT * FROM Table_AU;
+
+
+
+
+
+
+
+
+
+
+
